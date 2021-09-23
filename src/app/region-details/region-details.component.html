@@ -1,0 +1,17 @@
+<style>
+  img {
+    max-width: 100%;
+  }
+</style>
+
+<h2>Region: {{ regionName }}</h2>
+<div *ngIf="region">
+  <ul>
+    <li *ngFor="let country of region; let i = index">
+      <p>
+        <img src="{{ country.flags[0] }}" alt="" />
+        <span>{{ country.name.common }}</span>
+      </p>
+    </li>
+  </ul>
+</div>
