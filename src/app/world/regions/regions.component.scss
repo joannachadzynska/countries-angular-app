@@ -1,0 +1,80 @@
+:host {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.map {
+  svg {
+    width: auto;
+    height: auto;
+
+    g {
+      cursor: pointer;
+      transition: all 0.3s linear;
+      position: relative;
+      &:focus {
+        outline: none;
+      }
+
+      &:hover {
+        .tooltip {
+        }
+        &#americas {
+          path {
+            fill: hsla(352, 100%, 60%, 0.7);
+          }
+        }
+        &#africa {
+          path {
+            fill: hsla(0, 0, 0, 0.7);
+          }
+        }
+        &#asia {
+          path {
+            fill: hsla(38, 97%, 59%, 0.7);
+          }
+        }
+        &#europe {
+          path {
+            fill: hsla(201, 100%, 39%, 0.7);
+          }
+        }
+        &#oceania {
+          path {
+            fill: hsla(149, 100%, 33%, 0.7);
+          }
+        }
+      }
+    }
+  }
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  .box {
+    -webkit-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+    box-shadow: 8px 8px 20px -12px rgba(66, 68, 90, 1);
+    border-radius: 20px;
+    display: grid;
+    place-items: center;
+    height: 150px;
+    background-color: pink;
+
+    span {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: clamp(1.5rem, 5vw, 1.75rem);
+    }
+  }
+}
