@@ -1,5 +1,4 @@
 import { TestBed } from '@angular/core/testing';
-
 import { RegionsService } from './regions.service';
 
 describe('RegionsService', () => {
