@@ -10,6 +10,7 @@ import { Region } from './region';
 })
 export class RegionsService {
   private regionsUrl = 'https://restcountries.com/v3/region';
+  private countryUrl = 'https://restcountries.com/v3.1/name';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
@@ -22,6 +23,16 @@ export class RegionsService {
     return this.http.get<Region>(url).pipe(
       tap((_: any) => this.log(`fetched region name=${name}`)),
       catchError(this.handleError<Country[]>(`get region by name name=${name}`))
+    );
+  }
+
+  getCountryByName(name: string): Observable<Country[]> {
+    const url = `${this.countryUrl}/${name}`;
+    return this.http.get<Country>(url).pipe(
+      tap((_: any) => this.log(`fetched country name=${name}`)),
+      catchError(
+        this.handleError<Country[]>(`get country by name name=${name}`)
+      )
     );
   }
 
