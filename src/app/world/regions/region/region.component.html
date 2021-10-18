@@ -1,0 +1,18 @@
+<h2>Region: {{ regionName }}</h2>
+<div *ngIf="region">
+  <ul>
+    <li *ngFor="let country of region; let i = index">
+      <p>
+        <img src="{{ country.flags[0] }}" alt="" />
+
+        <a
+          routerLink="/region/{{ regionName }}/{{
+            country.name.common | lowercase
+          }}"
+        >
+          <span>{{ country.name.common }}</span></a
+        >
+      </p>
+    </li>
+  </ul>
+</div>
