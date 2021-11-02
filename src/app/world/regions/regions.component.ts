@@ -1,4 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Country } from 'src/app/country';
 
 @Component({
   selector: 'app-regions',
@@ -12,12 +14,13 @@ export class RegionsComponent implements OnInit {
   isMobile: boolean = true;
   isRegions: boolean = true;
 
-  constructor() {}
+  constructor(private store: Store<{ countries: Country[] }>) {}
 
   ngOnInit(): void {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.isMobile = this.screenWidth <= 768;
+    // this.store.dispatch({ type: '[World Page] All Countries' });
   }
 
   @HostListener('window: resize', ['$event'])

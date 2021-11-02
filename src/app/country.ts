@@ -3,27 +3,31 @@ export interface Country {
     common: string;
     official: string;
     nativeName: {
-      ron: {
+      [key: string]: {
         official: string;
         common: string;
       };
     };
   };
-  independent: true;
-  unMember: true;
+  independent: boolean;
+  unMember: boolean;
   currencies: {
-    RON: {
+    [key: string]: {
       name: string;
       symbol: string;
     };
   };
   capital: string[];
   region: string;
+  subregion: string;
   languages: {
-    ron: string;
+    [key: string]: string;
   };
   borders: string[];
   area: number;
   flag: string;
   flags: string[];
+  population: number;
+  tld: string[];
+  cioc: string;
 }

@@ -1,1 +1,43 @@
-<h2>{{ countryName | capitalizeFirstLetter }}</h2>
+<ng-container>
+  <img src="{{ country.flags[0] }}" />
+</ng-container>
+<h2>{{ country.name.common | capitalizeFirstLetter }}</h2>
+
+<br />
+<p>
+  Native Name:
+  <span *ngFor="let name of country.name.nativeName | keyvalue"
+    >{{ name.value.common }}
+  </span>
+</p>
+<p>Population: {{ country.population }}</p>
+<p>Region: {{ country.region }}</p>
+<p>Sub Region: {{ country.subregion }}</p>
+
+<p>
+  Capital: <span *ngFor="let capital of country.capital">{{ capital }}</span>
+</p>
+<br />
+<p>
+  Top Level Domain:
+  <span *ngIf="country.tld.length > 0">
+    <ng-container *ngFor="let domain of country.tld">{{ domain }}</ng-container>
+  </span>
+</p>
+<p>
+  Currencies:
+  <span *ngFor="let curr of country.currencies | keyvalue">{{
+    curr.value.name
+  }}</span>
+</p>
+
+<p>
+  Languages:
+  <span *ngFor="let lang of country.languages | keyvalue"
+    >{{ lang.value }}&nbsp;</span
+  >
+</p>
+
+<br />
+
+<p>Border Countries:</p>

@@ -1,8 +1,9 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Country } from 'src/app/country';
+import { Store } from '@ngrx/store';
 import { RegionsService } from 'src/app/regions.service';
+import { Country } from './../../country';
 
 @Component({
   selector: 'app-region',
