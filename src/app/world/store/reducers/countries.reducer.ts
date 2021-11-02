@@ -1,5 +1,5 @@
 import { createReducer, on } from '@ngrx/store';
-import { getAll } from '../actions/countries.actions';
+import { CountriesActions } from '../actions';
 import { Country } from './../../../country';
 export const countriesFeatureKey = 'countries';
 
@@ -7,8 +7,9 @@ export const initialState: Country[] = [];
 
 const _countriesReducer = createReducer(
   initialState,
-  on(getAll, (state, action) => {
-    console.log(action);
+  on(CountriesActions.loadCountries, (state, action) => [...state]),
+  on(CountriesActions.getAllCountriesSuccess, (state, action) => {
+    console.log(action.countries);
 
     return state;
   })

@@ -20,7 +20,7 @@ export class RegionsComponent implements OnInit {
     this.screenWidth = window.innerWidth;
     this.screenHeight = window.innerHeight;
     this.isMobile = this.screenWidth <= 768;
-    // this.store.dispatch({ type: '[World Page] All Countries' });
+    this.store.dispatch({ type: '[World Page] All Countries' });
   }
 
   @HostListener('window: resize', ['$event'])

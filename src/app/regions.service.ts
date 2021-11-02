@@ -22,10 +22,9 @@ export class RegionsService {
     const url = `https://restcountries.com/v3.1/all`;
     return this.http.get<Region>(url).pipe(
       tap((_: any) => this.log(`fetched all countries`)),
-      catchError(this.handleError<Country[]>(`get all countries`))
+      catchError(this.handleError<Country[]>(`get region by name name=${name}`))
     );
   }
-
   getRegionByName(name: string): Observable<Country[]> {
     const url = `${this.regionsUrl}/${name}`;
     return this.http.get<Region>(url).pipe(
