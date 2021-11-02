@@ -1,43 +1,41 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { Country } from 'src/app/country';
-import { RegionsService } from 'src/app/regions.service';
+import * as countriesSelectors from './../store/selectors';
 
 @Component({
-  selector: 'app-country',
-  templateUrl: './country.component.html',
-  styleUrls: ['./country.component.scss'],
+    selector: 'app-country',
+    templateUrl: './country.component.html',
+    styleUrls: ['./country.component.scss'],
 })
 export class CountryComponent implements OnInit {
-  country!: Country;
-  countryName: string = '';
+    country!: Country;
+    countryName: string = '';
+    borders$!: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private regionService: RegionsService,
-    private location: Location
-  ) {}
+    constructor(
+        private route: ActivatedRoute,
+        private location: Location,
+        private store: Store<any>
+    ) {}
 
-  ngOnInit(): void {
-    this.getCountry();
-    const name = this.route.snapshot.paramMap.get('country')!;
-    this.countryName = name;
-    this.route.data.subscribe((data) => {
-      console.log(data.country[0]);
-      this.country = data.country[0];
-    });
-  }
+    ngOnInit(): void {
+        const name = this.route.snapshot.paramMap.get('country')!;
+        this.countryName = name;
+        this.route.data.subscribe((data) => {
+            this.country = data.country[0];
+        });
 
-  getCountry(): void {
-    const name = this.route.snapshot.paramMap.get('country')!;
-    // this.regionService.getCountryByName(name).subscribe((country) => {
-    //   this.country = country[0];
-    //   // console.log(this.country);
-    // });
-  }
+        this.country.borders.forEach((border) => {
+            const b = this.store.select(
+                countriesSelectors.selectCountriesByCioc(border)
+            );
+        });
+    }
 
-  goBack(): void {
-    this.location.back();
-  }
+    goBack(): void {
+        this.location.back();
+    }
 }
