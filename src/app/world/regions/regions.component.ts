@@ -10,6 +10,7 @@ export class RegionsComponent implements OnInit {
   screenWidth: any;
   screenHeight: any;
   isMobile: boolean = true;
+  isRegions: boolean = true;
 
   constructor() {}
 

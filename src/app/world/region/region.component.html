@@ -1,0 +1,22 @@
+<h2>Region: {{ regionName | uppercase }}</h2>
+
+<form>
+  <input type="search" name="" id="" placeholder="Search..." />
+</form>
+<div *ngIf="region">
+  <ul>
+    <li *ngFor="let country of region; let i = index">
+      <div class="img__container">
+        <img src="{{ country.flags[0] }}" alt="" />
+      </div>
+
+      <a
+        routerLink="/region/{{ regionName }}/{{
+          country.name.common | lowercase
+        }}"
+      >
+        <span>{{ country.name.common }}</span></a
+      >
+    </li>
+  </ul>
+</div>
