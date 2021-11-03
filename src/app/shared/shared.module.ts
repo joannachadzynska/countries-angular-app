@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { CapitalizeFirstLetterPipe } from './pipes/capitalize-first-letter.pipe';
+import { RouterModule } from '@angular/router';
+import { components } from './components';
 
 @NgModule({
-  declarations: [CapitalizeFirstLetterPipe],
-  imports: [CommonModule],
-  exports: [CapitalizeFirstLetterPipe],
+  declarations: [...components],
+  imports: [CommonModule, RouterModule],
+  exports: [...components],
 })
 export class SharedModule {}

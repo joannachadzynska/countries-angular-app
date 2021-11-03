@@ -8,8 +8,8 @@ import { WorldStoreModule } from './store/world-store.module';
 import { WorldRoutingModule } from './world-routing.module';
 
 @NgModule({
-    declarations: [RegionsComponent, RegionComponent, CountryComponent],
-    imports: [CommonModule, WorldStoreModule, WorldRoutingModule, SharedModule],
-    exports: [RegionsComponent, CountryComponent],
+  declarations: [RegionsComponent, RegionComponent, CountryComponent],
+  imports: [CommonModule, WorldStoreModule, WorldRoutingModule, SharedModule],
+  exports: [RegionsComponent, CountryComponent],
 })
 export class WorldModule {}
