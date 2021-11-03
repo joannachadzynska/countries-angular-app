@@ -1,7 +1,12 @@
 .logo {
   display: flex;
   align-items: center;
+
   img {
     margin-right: 1rem;
+  }
+
+  h4 {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
   }
 }

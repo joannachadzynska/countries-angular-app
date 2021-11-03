@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <a routerLink="/">
       <div class="logo">
         <img width="40" alt="Angular Logo" src="assets/images/logo.svg" />
-        <span>Countries Guide</span>
+        <h4>Countries Guide</h4>
       </div></a
     >
   `,

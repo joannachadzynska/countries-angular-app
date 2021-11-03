@@ -1,7 +1,10 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
 :host {
-  height: 60px;
-  background-color: #1976d2;
-  color: white;
+  height: 5rem;
+  background-color: theme-var(--theme-secondary);
+  @include bs-elevate;
   font-weight: 600;
   display: flex;
   align-items: center;
