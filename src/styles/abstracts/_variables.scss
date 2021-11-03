@@ -1,0 +1,27 @@
+$--theme-primary: --theme-primary;
+$--theme-secondary: --theme-secondary;
+$--theme-input: --theme-input;
+$--theme-text: --theme-text;
+
+// Default theme
+$theme-map-light: (
+  $--theme-primary: rgb(250, 250, 250),
+  $--theme-secondary: rgb(255, 255, 255),
+  $--theme-input: hsl(0, 0%, 52%),
+  $--theme-text: #111517,
+);
+
+// Override the default light theme
+$theme-map-dark: (
+  $--theme-primary: hsl(207, 26%, 17%),
+  $--theme-secondary: hsl(209, 23%, 22%),
+  $--theme-input: hsl(0, 0%, 100%),
+  $--theme-text: hsl(0, 0%, 100%),
+);
+
+$gap: 1em;
+$theme-transition-duration: 1500ms;
+
+// Other Variables
+$max-width: 750px;
+$icon-size: 1.5em;
