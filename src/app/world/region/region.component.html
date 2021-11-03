@@ -4,19 +4,26 @@
   <input type="search" name="" id="" placeholder="Search..." />
 </form>
 <div *ngIf="region">
-  <ul>
+  <ul class="cards">
     <li *ngFor="let country of region; let i = index">
-      <div class="img__container">
-        <img *ngIf="country.flags" src="{{ country.flags.svg }}" alt="" />
-      </div>
-
       <a
+        class="card"
         routerLink="/region/{{ regionName }}/{{
           country.name.common | lowercase
         }}"
       >
-        <span>{{ country.name.common }}</span></a
-      >
+        <div class="img__container">
+          <img *ngIf="country.flags" src="{{ country.flags.svg }}" alt="" />
+        </div>
+
+        <div class="card__content">
+          <h3 class="title">{{ country.name.common }}</h3>
+
+          <p><span>Population:</span> {{ country.population }}</p>
+          <p><span>Region:</span> {{ country.region }}</p>
+          <p><span>Capital:</span> {{ country.capital[0] }}</p>
+        </div>
+      </a>
     </li>
   </ul>
 </div>
