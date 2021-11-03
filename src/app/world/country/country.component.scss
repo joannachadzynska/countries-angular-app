@@ -1,0 +1,21 @@
+:host {
+}
+
+.country {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+
+  &__flag {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

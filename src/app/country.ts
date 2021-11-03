@@ -26,8 +26,17 @@ export interface Country {
   borders: string[];
   area: number;
   flag: string;
-  flags: string[];
+  flags: Flag;
   population: number;
   tld: string[];
   cioc: string;
+}
+
+export interface CountryRegions extends Country {}
+
+export interface CountryDetails extends Flag {}
+
+export interface Flag {
+  png: string;
+  svg: string;
 }
