@@ -1,0 +1,13 @@
+.theme-menu {
+  width: fit-content;
+  li {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5em;
+  }
+
+  svg {
+    min-width: 18px;
+    width: 6%;
+  }
+}
