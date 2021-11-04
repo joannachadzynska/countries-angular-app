@@ -1188,6 +1188,13 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
+"@bcodes/ngx-theme-service@^2.0.0":
+  version "2.0.0"
+  resolved "https://js-packages.gwo.pl/@bcodes%2fngx-theme-service/-/ngx-theme-service-2.0.0.tgz#9216f0118711d8e9158d08b83cb53c4f5aff544b"
+  integrity sha512-wAneAGmVgStmegk2E0jKgkanyetX+dOAYpgzw78rUVAV8gZKLHVvNhMQwVKbcJuel1vn7XxNYqT/kxxdgtf1sA==
+  dependencies:
+    tslib "^1.9.0"
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://js-packages.gwo.pl/@csstools%2fconvert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
