@@ -25,7 +25,10 @@ export class CountryComponent implements OnInit {
     const name = this.route.snapshot.paramMap.get('country')!;
     this.countryName = name;
     this.route.data.subscribe((data) => {
-      this.country = data.country[0];
+      this.country = data.country.find(
+        (country: { name: { common: string } }) =>
+          country.name.common.toLowerCase() === this.countryName
+      );
     });
 
     this.country.borders.forEach((border) => {
