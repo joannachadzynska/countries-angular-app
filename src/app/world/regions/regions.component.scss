@@ -39,19 +39,19 @@
       }
 
       &#americas:hover path {
-        fill: hsla(352, 100%, 60%, 0.7);
+        fill: hsl(352, 100%, 50% + 12%);
       }
       &#africa:hover path {
-        fill: hsla(0, 0, 0);
+        fill: hsl(0, 0, 0 + 12%);
       }
       &#asia:hover path {
-        fill: hsla(38, 97%, 59%, 0.7);
+        fill: hsl(38, 97%, 59% + 12%);
       }
       &#europe:hover path {
-        fill: hsla(201, 100%, 39%, 0.7);
+        fill: hsl(201, 100%, 39% + 5%);
       }
       &#oceania:hover path {
-        fill: hsla(149, 100%, 33%, 0.7);
+        fill: hsl(149, 100%, 33% + 8%);
       }
     }
   }

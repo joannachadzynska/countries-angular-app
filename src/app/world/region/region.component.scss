@@ -1,11 +1,12 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
+@import "abstracts/typography";
 
 .cards {
   padding: 0;
   margin: 2rem 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
   li {
     display: flex;
@@ -16,22 +17,32 @@
   border-radius: 5px;
   background-color: theme-var(--theme-secondary);
   @include bs-elevate;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1.5fr 1fr;
+  transition: transform 0.25s ease-in-out;
   overflow: hidden;
-  justify-content: space-between;
 
   &__content {
-    margin-top: 1rem;
-    padding: 1rem;
+    padding: 0 1rem 1rem;
+    line-height: 1.8;
 
     .title {
       margin-bottom: 1rem;
+      font-size: clamp(1rem, 5vw, 1.4rem);
+    }
+
+    p,
+    span {
+      font-size: clamp(0.75rem, 5vw, 1rem);
     }
 
     span {
-      font-weight: 600;
+      font-weight: $fw-medium;
     }
+  }
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
 
@@ -42,5 +53,45 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+form {
+  margin: 2rem 0 3rem;
+  position: relative;
+  display: block;
+}
+.search {
+  &__field {
+    background-color: theme-var($--theme-secondary);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    @include bs-elevate;
+    padding: 0.75em 5em;
+    display: block;
+    width: 50%;
+  }
+
+  &__button {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-50%);
+    width: 1.5rem;
+    height: 1.5rem;
+    .search__icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      object-fit: cover;
+      path {
+        fill: theme-var($--theme-text);
+      }
+    }
   }
 }
