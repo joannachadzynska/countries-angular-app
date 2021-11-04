@@ -6,61 +6,64 @@
   <span>Back</span>
 </button>
 
-<div class="country">
-  <div class="country__flag">
-    <img src="{{ country.flags.svg }}" />
-  </div>
+<ng-container *ngIf="country"
+  ><div class="country">
+    <div class="country__flag">
+      <img src="{{ country.flags.svg }}" />
+    </div>
 
-  <div class="country__content__container">
-    <h2 class="country__content__name">
-      {{ country.name.common }}
-    </h2>
+    <div class="country__content__container">
+      <h2 class="country__content__name">
+        {{ country.name.common }}
+      </h2>
 
-    <div class="country__content">
-      <div class="country__content__first">
-        <p>
-          <span class="bold">Native Name:</span>
-          <span *ngFor="let name of country.name.nativeName | keyvalue"
-            >{{ name.value.common }},&nbsp;
-          </span>
-        </p>
-        <p>
-          <span class="bold">Population:</span>{{ country.population | number }}
-        </p>
-        <p><span class="bold">Region:</span>{{ country.region }}</p>
-        <p><span class="bold">Sub Region:</span>{{ country.subregion }}</p>
+      <div class="country__content">
+        <div class="country__content__first">
+          <p>
+            <span class="bold">Native Name:</span>
+            <span *ngFor="let name of country.name.nativeName | keyvalue"
+              >{{ name.value.common }},&nbsp;
+            </span>
+          </p>
+          <p>
+            <span class="bold">Population:</span
+            >{{ country.population | number }}
+          </p>
+          <p><span class="bold">Region:</span>{{ country.region }}</p>
+          <p><span class="bold">Sub Region:</span>{{ country.subregion }}</p>
 
-        <p>
-          <span class="bold">Capital:</span>
-          <span *ngFor="let capital of country.capital">{{ capital }}</span>
-        </p>
-      </div>
+          <p>
+            <span class="bold">Capital:</span>
+            <span *ngFor="let capital of country.capital">{{ capital }}</span>
+          </p>
+        </div>
 
-      <div class="country__content__second">
-        <p>
-          <span class="bold"> Top Level Domain:</span>
-          <span *ngIf="country.tld.length > 0">
-            <ng-container *ngFor="let domain of country.tld">
-              {{ domain }}</ng-container
+        <div class="country__content__second">
+          <p>
+            <span class="bold"> Top Level Domain:</span>
+            <span *ngIf="country.tld.length > 0">
+              <ng-container *ngFor="let domain of country.tld">
+                {{ domain }}</ng-container
+              >
+            </span>
+          </p>
+          <p>
+            <span class="bold">Currencies:</span>
+            <span *ngFor="let curr of country.currencies | keyvalue"
+              >{{ curr.value.name }},&nbsp;</span
             >
-          </span>
-        </p>
-        <p>
-          <span class="bold">Currencies:</span>
-          <span *ngFor="let curr of country.currencies | keyvalue"
-            >{{ curr.value.name }},&nbsp;</span
-          >
-        </p>
-        <p>
-          <span class="bold">Languages:</span>
-          <span class="wrap" *ngFor="let lang of country.languages | keyvalue"
-            >{{ lang.value }},&nbsp;</span
-          >
-        </p>
+          </p>
+          <p>
+            <span class="bold">Languages:</span>
+            <span class="wrap" *ngFor="let lang of country.languages | keyvalue"
+              >{{ lang.value }},&nbsp;</span
+            >
+          </p>
+        </div>
+      </div>
+      <div class="country__content__borders">
+        <p class="bold">Border Countries:</p>
       </div>
     </div>
-    <div class="country__content__borders">
-      <p class="bold">Border Countries:</p>
-    </div>
   </div>
-</div>
+</ng-container>
