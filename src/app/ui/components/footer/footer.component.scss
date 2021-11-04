@@ -2,7 +2,7 @@
 @import "abstracts/mixins";
 
 :host {
-  height: 5rem;
+  min-height: fit-content;
   background-color: theme-var(--theme-secondary);
   @include bs-elevate;
   font-weight: 600;
@@ -14,13 +14,18 @@
 
 footer {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
   gap: 1rem;
 
+  @media (min-width: 40rem) {
+    flex-direction: row;
+  }
+
   .about-me {
-    padding: 1rem;
+    padding: 0.875em;
+    text-align: center;
   }
 }

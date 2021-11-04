@@ -1,8 +1,7 @@
-<h2>Region: {{ regionName | uppercase }}</h2>
-
 <form>
   <input type="search" name="" id="" placeholder="Search..." />
 </form>
+
 <div *ngIf="region">
   <ul class="cards">
     <li *ngFor="let country of region; let i = index">
@@ -19,9 +18,11 @@
         <div class="card__content">
           <h3 class="title">{{ country.name.common }}</h3>
 
-          <p><span>Population:</span> {{ country.population }}</p>
+          <p><span>Population:</span> {{ country.population | number }}</p>
           <p><span>Region:</span> {{ country.region }}</p>
-          <p><span>Capital:</span> {{ country.capital[0] }}</p>
+          <p *ngFor="let capital of country.capital">
+            <span>Capital:</span> {{ capital }}
+          </p>
         </div>
       </a>
     </li>

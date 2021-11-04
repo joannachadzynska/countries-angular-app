@@ -1,11 +1,11 @@
-<h1 class="title">Regions</h1>
-
-<div class="boxes" *ngIf="isMobile; else worldMap">
-  <a *ngFor="let region of regions" routerLink="/region/{{ region }}">
-    <div class="box">
-      <span> {{ region }}</span>
-    </div>
-  </a>
+<div *ngIf="isMobile; else worldMap">
+  <div class="boxes">
+    <a *ngFor="let region of regions" routerLink="/region/{{ region }}">
+      <div class="box">
+        <span> {{ region }}</span>
+      </div>
+    </a>
+  </div>
 </div>
 
 <ng-template #worldMap>
