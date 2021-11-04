@@ -1,7 +1,6 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngrx/store';
 import { RegionsService } from 'src/app/regions.service';
 import { Country } from './../../country';
 
@@ -11,7 +10,7 @@ import { Country } from './../../country';
   styleUrls: ['./region.component.scss'],
 })
 export class RegionComponent implements OnInit {
-  region: Country[] | undefined;
+  region!: Country[];
   regionName: string = '';
 
   constructor(
