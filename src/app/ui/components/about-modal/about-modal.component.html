@@ -1,6 +1,6 @@
 <app-modal (onCloseClick)="onClose()">
   <header>
-    <h2>O mnie</h2>
+    <h3>About Me</h3>
     <app-custom-button
       (click)="onClose()"
       [paddingBlock]="'0.5rem'"
@@ -14,7 +14,7 @@
       </svg>
     </app-custom-button>
   </header>
-  <main></main>
+  <main><iframe [src]="trustedResourceUrl"></iframe></main>
 
   <footer></footer>
 </app-modal>

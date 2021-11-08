@@ -2,7 +2,13 @@
 @import "abstracts/mixins";
 
 app-modal {
+  header,
+  main {
+    padding: 1em;
+  }
   header {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }
