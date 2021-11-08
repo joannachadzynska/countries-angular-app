@@ -3,6 +3,11 @@
     <div class="copy">
       {{ config?.date | date: "fullDate":"":"pl" }} {{ config?.footer }}
     </div>
-    <div class="about-me">o mnie</div>
+    <app-custom-button (click)="onModalOpen()">About Me</app-custom-button>
   </footer>
 </app-wrapper>
+
+<app-about-modal
+  *ngIf="isModalOpen"
+  (closeClick)="onModalClose()"
+></app-about-modal>

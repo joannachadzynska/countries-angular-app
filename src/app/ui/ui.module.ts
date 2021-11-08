@@ -8,6 +8,7 @@ import { LogoComponent } from './components/header/logo/logo.component';
 import { NavigationComponent } from './components/header/navigation/navigation.component';
 import { WrapperComponent } from './components/wrapper/wrapper.component';
 import { LayoutComponent } from './containers/layout/layout.component';
+import { AboutModalComponent } from './components/about-modal/about-modal.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LayoutComponent } from './containers/layout/layout.component';
     WrapperComponent,
     NavigationComponent,
     LogoComponent,
+    AboutModalComponent,
   ],
   imports: [CommonModule, RouterModule, SharedModule],
 

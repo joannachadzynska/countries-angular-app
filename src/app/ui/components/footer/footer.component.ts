@@ -1,12 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   config: { [key: string]: string } | null = null;
+  isModalOpen = false;
 
   constructor() {
     setTimeout(() => {
@@ -17,5 +18,10 @@ export class FooterComponent implements OnInit {
     }, 500);
   }
 
-  ngOnInit(): void {}
+  onModalOpen(): void {
+    this.isModalOpen = true;
+  }
+  onModalClose(): void {
+    this.isModalOpen = false;
+  }
 }
