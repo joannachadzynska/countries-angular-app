@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Country } from 'src/app/country';
-import * as countriesSelectors from './../store/selectors';
 
 @Component({
   selector: 'app-country',
@@ -31,11 +30,15 @@ export class CountryComponent implements OnInit {
       );
     });
 
-    this.country.borders.forEach((border) => {
-      const b = this.store.select(
-        countriesSelectors.selectCountriesByCioc(border)
-      );
-    });
+    // this.country?.borders?.forEach((border) => {
+    //   this.borders$ = this.store
+    //     .select(countriesSelectors.selectCountriesByCioc(border))
+    //     .pipe(
+    //       tap((border) => {
+    //         console.log(border);
+    //       })
+    //     );
+    // });
   }
 
   goBack(): void {
