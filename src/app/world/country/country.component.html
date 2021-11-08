@@ -41,7 +41,7 @@
         <div class="country__content__second">
           <p>
             <span class="bold"> Top Level Domain:</span>
-            <span *ngIf="country.tld.length > 0">
+            <span *ngIf="country.tld">
               <ng-container *ngFor="let domain of country.tld">
                 {{ domain }}</ng-container
               >
