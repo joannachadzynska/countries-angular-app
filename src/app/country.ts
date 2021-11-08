@@ -23,7 +23,7 @@ export interface Country {
   languages: {
     [key: string]: string;
   };
-  borders: string[];
+  borders?: string[];
   area: number;
   flag: string;
   flags: Flag;
