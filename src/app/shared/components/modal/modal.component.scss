@@ -20,10 +20,7 @@
 }
 
 .modal {
-  // display: grid;
-  // position: relative;
-  max-width: 35rem;
-  background-color: theme-var($--theme-secondary);
+  background-color: theme-var($--theme-primary);
   @include bs-elevate;
   overflow: hidden;
   z-index: 1;

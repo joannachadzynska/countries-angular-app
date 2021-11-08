@@ -2,6 +2,7 @@ $--theme-primary: --theme-primary;
 $--theme-secondary: --theme-secondary;
 $--theme-input: --theme-input;
 $--theme-text: --theme-text;
+$--theme-linkedin: --theme-linkedin;
 
 // Default theme
 $theme-map-light: (
@@ -9,6 +10,7 @@ $theme-map-light: (
   $--theme-secondary: rgb(255, 255, 255),
   $--theme-input: hsl(0, 0%, 52%),
   $--theme-text: #111517,
+  $--theme-linkedin: #0a66c2,
 );
 
 // Override the default light theme
@@ -17,6 +19,7 @@ $theme-map-dark: (
   $--theme-secondary: hsl(209, 23%, 22%),
   $--theme-input: hsl(0, 0%, 100%),
   $--theme-text: hsl(0, 0%, 100%),
+  $--theme-linkedin: rgb(255, 255, 255),
 );
 
 $gap: 1em;
