@@ -2,6 +2,11 @@
 @import "abstracts/mixins";
 @import "abstracts/typography";
 
+:host {
+  display: block;
+  margin-top: 2rem;
+}
+
 .cards {
   padding: 0;
   margin: 2rem 0;

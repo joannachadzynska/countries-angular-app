@@ -1,25 +1,9 @@
 @import "abstracts/variables";
 @import "abstracts/mixins";
 
-.back {
-  border: none;
-  border-radius: 5px;
-  background-color: theme-var($--theme-secondary);
-  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1);
-  color: theme-var($--theme-text);
-  cursor: pointer;
-  padding: 0.5rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: clamp(1rem, 5vw, 1.1rem);
-  margin-top: 3rem;
-  svg {
-    width: 24px;
-    path {
-      fill: theme-var($--theme-text);
-    }
-  }
+:host {
+  display: block;
+  margin-top: 2rem;
 }
 
 .country {
@@ -79,4 +63,11 @@
     flex-wrap: nowrap;
     gap: 1.5rem;
   }
+}
+
+.borders {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.875rem;
 }
