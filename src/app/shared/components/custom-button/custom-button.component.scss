@@ -1,0 +1,28 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+
+.custom-button {
+  border: none;
+  border-radius: 5px;
+  background-color: theme-var($--theme-secondary);
+  box-shadow: 0px 0px 5px -1px rgba(0, 0, 0, 1);
+  color: theme-var($--theme-text);
+  cursor: pointer;
+  padding: var(--padding-block) var(--padding-inline);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: clamp(1rem, 5vw, 1.1rem);
+  transition: background-color 0.25s ease-in-out;
+
+  ::ng-deep svg {
+    width: 24px;
+    path {
+      fill: theme-var($--theme-text);
+    }
+  }
+
+  &:hover {
+    background-color: theme-var($--theme-primary);
+  }
+}

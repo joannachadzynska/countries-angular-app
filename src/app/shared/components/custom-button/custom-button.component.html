@@ -1,0 +1,8 @@
+<button
+  class="custom-button"
+  [style.--padding-block]="paddingBlock"
+  [style.--padding-inline]="paddingInline"
+  (click)="onClickButton($event)"
+>
+  <ng-content></ng-content>
+</button>
