@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Country } from 'src/app/country';
+import * as countriesSelectors from '../store/selectors';
 
 @Component({
   selector: 'app-country',
@@ -12,7 +13,7 @@ import { Country } from 'src/app/country';
 export class CountryComponent implements OnInit {
   country!: Country;
   countryName: string = '';
-  borders$!: any;
+  borders$: any[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -29,16 +30,17 @@ export class CountryComponent implements OnInit {
           country.name.common.toLowerCase() === this.countryName
       );
     });
+  }
 
-    // this.country?.borders?.forEach((border) => {
-    //   this.borders$ = this.store
-    //     .select(countriesSelectors.selectCountriesByCioc(border))
-    //     .pipe(
-    //       tap((border) => {
-    //         console.log(border);
-    //       })
-    //     );
-    // });
+  ngAfterViewInit() {
+    this.country?.borders?.forEach((border) => {
+      this.store
+        .select(countriesSelectors.selectCountriesByName(border))
+        .subscribe((item) => {
+          console.log(item);
+        });
+    });
+    console.log(this.borders$);
   }
 
   goBack(): void {

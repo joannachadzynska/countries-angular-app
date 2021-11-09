@@ -22,6 +22,7 @@
 .modal {
   background-color: theme-var($--theme-primary);
   @include bs-elevate;
+  max-width: 25rem;
   overflow: hidden;
   z-index: 1;
 }
